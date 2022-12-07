@@ -1,21 +1,41 @@
-import { FC } from "react";
-import BannerImage from '../../assets/banner.jpg';
+import { FC, useState, useEffect } from "react";
+import { Space, Swiper } from 'antd-mobile'
 import styles from './styles.module.scss';
 import { GetImages } from "../../api";
 
-interface imgsType {
-  list: Array<string>,
-}
-GetImages<imgsType>({ page: 1, size: 10, type: "comic" }).then(res => {
-  console.log(res);
-}).catch(err => {
-  console.log(err);
-})
 
 const FirstSection: FC = () => {
+  const [data, setData] = useState({ list: [] });
+  useEffect(() => {
+    // 更优雅的方式
+    const fetchData = async () => {
+      const res: any = await GetImages({ page: 1, size: 5, type: "comic" })
+      console.log(res);
+      setData(res);
+    };
+    fetchData();
+  }, []);
   return (
     <div className={styles.firstSection}>
-      <img src={BannerImage} alt="Banner" />
+     
+      <Space direction='vertical' block>
+        <Swiper
+          indicator={(total, current) => (
+            <div className={styles.customIndicator}>
+              {`${current + 1} / ${total}`}
+            </div>
+          )}
+        >
+          {
+            data.list.map((item: any, index: number) => (
+              <Swiper.Item key={index}>
+                <img src={item.url} alt="Banner" />
+              </Swiper.Item>
+            ))
+          }
+        </Swiper>
+        
+      </Space>
     </div>
   )
 }
