@@ -31,7 +31,7 @@ const tabs = [
   }
 ]
 
-const TAB_HEIGHT = 56;
+const TAB_HEIGHT = 60;
 
 // 1. 点击 Tab 滚动跳转 x
 // 3. Tabs 吸顶 x

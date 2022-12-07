@@ -1,6 +1,10 @@
 .firstSection {
   img {
     width: 100%;
+    height: 200px;
+    // 解决图片间隙
+    display: block;
+    object-fit: cover;
   }
 
   .content {

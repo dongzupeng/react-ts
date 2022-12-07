@@ -20,6 +20,7 @@ const FirstSection: FC = () => {
      
       <Space direction='vertical' block>
         <Swiper
+          loop={true}
           indicator={(total, current) => (
             <div className={styles.customIndicator}>
               {`${current + 1} / ${total}`}
