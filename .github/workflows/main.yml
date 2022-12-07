@@ -3,7 +3,7 @@ name: deploy
 on:
   push:
     branches: 
-     - main
+     - master
 
 
 jobs:
@@ -41,5 +41,5 @@ jobs:
           git config user.email "${{ secrets.GIT_EMAIL }}"
           git add -A
           git commit -m 'deploy react'
-          git push -f https://dongzupeng:${{ secrets.ACCESS_TOKEN }}@github.com/dongzupeng/react-ts.git main:gh-pages
+          git push -f https://dongzupeng:${{ secrets.ACCESS_TOKEN }}@github.com/dongzupeng/react-ts.git master:gh-pages
           cd -
