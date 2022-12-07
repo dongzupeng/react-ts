@@ -1,8 +1,4 @@
 import {FC, useEffect, useRef, useState} from "react";
-import CartoonImage from '../../assets/cartoon.jpg';
-import MovieImage from '../../assets/movie.png';
-import LifeImage from '../../assets/life.jpg';
-import FoodImage from '../../assets/food.jpg';
 import LogoImage from '../../assets/logo.png';
 
 import styles from './styles.module.scss';
@@ -10,24 +6,39 @@ import classNames from "classnames";
 
 const tabs = [
   {
-    key: 'cartoon',
+    key: 'comic',
     title: '动画',
-    image: CartoonImage,
+    image: "https://pic.netbian.com/uploads/allimg/220111/002720-16418320408c00.jpg",
+  },
+  {
+    key: 'animal',
+    title: '动物',
+    image: "https://pic.netbian.com/uploads/allimg/210308/224421-1615214661c045.jpg",
   },
   {
     key: 'food',
     title: '美食',
-    image: FoodImage,
+    image: "https://pic.netbian.com/uploads/allimg/170718/170400-1500368640ed1f.jpg",
+  },
+  {
+    key: 'beauty',
+    title: '美女',
+    image: "https://pic.netbian.com/uploads/allimg/211210/232707-16391500276274.jpg", 
   },
   {
     key: 'movie',
     title: '电影',
-    image: MovieImage,
+    image: "https://pic.netbian.com/uploads/allimg/210730/001329-1627575209b75e.jpg",
   },
   {
-    key: 'life',
-    title: '生活',
-    image: LifeImage,
+    key: 'game',
+    title: '游戏',
+    image: "https://pic.netbian.com/uploads/allimg/210512/230537-1620831937c93c.jpg",
+  },
+  {
+    key: 'phone',
+    title: '手机壁纸',
+    image: "https://pic.netbian.com/uploads/allimg/211223/232002-1640272802c15b.jpg",
   }
 ]
 

@@ -10,7 +10,7 @@ function App() {
     <div className={styles.app}>
       <FirstSection />
       <SecondSection />
-      <ThirdSection />
+      {/* <ThirdSection /> */}
     </div>
   );
 }
