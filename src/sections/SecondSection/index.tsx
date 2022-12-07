@@ -1,4 +1,4 @@
-import {FC, useEffect, useRef, useState} from "react";
+import { FC, useEffect, useRef, useState } from "react";
 import LogoImage from '../../assets/logo.png';
 
 import styles from './styles.module.scss';
@@ -23,7 +23,7 @@ const tabs = [
   {
     key: 'beauty',
     title: '美女',
-    image: "https://pic.netbian.com/uploads/allimg/211210/232707-16391500276274.jpg", 
+    image: "https://pic.netbian.com/uploads/allimg/211210/232707-16391500276274.jpg",
   },
   {
     key: 'movie',
@@ -72,7 +72,7 @@ const SecondSection: FC = () => {
       const sectionNodes = secondSectionRef.current.querySelectorAll('section');
 
       Array.from(sectionNodes).forEach(sectionEl => {
-        const {top} = sectionEl.getBoundingClientRect();
+        const { top } = sectionEl.getBoundingClientRect();
         const key = sectionEl.getAttribute('data-id') || '';
 
         if (top <= TAB_HEIGHT) {
@@ -107,18 +107,19 @@ const SecondSection: FC = () => {
         {tabs.map(tab => (
           <section data-id={tab.key} key={tab.key}>
             <h2>{tab.title}</h2>
-            <img src={tab.image} alt={tab.key}/>
+            <img src={tab.image} alt={tab.key} />
           </section>
         ))}
       </div>
 
       {/* 吸底按钮 */}
       <div className={classNames(styles.btnWrapper, { [styles.visible]: isFixed })}>
-        <img src={LogoImage} alt="LOGO"/>
-
+        <img src={LogoImage} alt="LOGO" />
+        {/* eslint-disable  */}
         <a href="https://www.bilibili.com/" target="_blank">
           <button>App 内打开</button>
         </a>
+        {/* eslint-enable  */}
       </div>
     </div>
   )
